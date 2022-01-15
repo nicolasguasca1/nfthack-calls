@@ -47,6 +47,7 @@
   background: #f1f3f5;
   padding: 15px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .meeting_info_block {

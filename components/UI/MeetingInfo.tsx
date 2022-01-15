@@ -71,7 +71,8 @@ const MeetingInfo = ({ setMeetInfoPopup }) => {
   } = useContext<any>(SocketContext);
   const router = useRouter();
 
-  const url = `${process.env.NEXT_PUBLIC_URL}${router.asPath}`;
+  const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT}${router.asPath}`;
+  const url = `${endpoint}/${me}`;
 
   return (
     <div className={styles.meeting_info_block}>
@@ -93,7 +94,6 @@ const MeetingInfo = ({ setMeetInfoPopup }) => {
         Share this link with the person you want in the meeting
       </p>
       <div className={styles.meet_link}>
-        <span className={styles.span}>{`${url}/${me}`}</span>
         <CopyToClipboard text={url}>
           <FontAwesomeIcon
             className={styles.icon_span_meet_link}
@@ -101,6 +101,7 @@ const MeetingInfo = ({ setMeetInfoPopup }) => {
             // onClick={() => navigator.clipboard.writeText(url)}
           />
         </CopyToClipboard>
+        <span className={styles.span}>{`\u00A0\u00A0${url}`}</span>
       </div>
       <div className={styles.permission_text}>
         <FontAwesomeIcon
