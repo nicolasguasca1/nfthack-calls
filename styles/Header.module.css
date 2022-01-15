@@ -1,0 +1,37 @@
+.action_btn {
+  display: flex;
+  align-items: center;
+  margin: 2%;
+  border-radius: 1%;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.help_text {
+  font-size: 18px;
+  padding-left: 15px;
+  color: #b6b6b6;
+}
+
+.title {
+  font-size: 22px;
+  padding-left: 10px;
+  color: #8b54fc;
+}
+.icon_block {
+  font-size: 20px;
+  padding: 10px;
+  color: #5f6368;
+}
+.image {
+  width: 100%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 124px;
+}

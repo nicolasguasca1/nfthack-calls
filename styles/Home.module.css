@@ -1,0 +1,269 @@
+.action_btn {
+  display: flex;
+  align-items: center;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 5px;
+  color: #9050d8;
+  text-decoration: none;
+}
+
+.btn_no_match {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.card {
+  margin: 1rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card_h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card_p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.description_title {
+  text-align: center;
+}
+
+.grid {
+  border-radius: 15;
+  margin: "30px 100px";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+  border: "2px solid black";
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #b162ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.footer_a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.h2 {
+  font-size: 44px;
+  font-weight: 400;
+  margin: 10px;
+}
+.h2_no_match {
+  font-size: 38px;
+  font-weight: 300;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.help_text {
+  font-size: 22px;
+  padding-left: 4px;
+  color: #c8d0da;
+}
+
+.home_page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.icon-block {
+  position: absolute;
+  top: 50%;
+  transform: translate(10px, -50%);
+  color: #5f6368;
+}
+
+.icon_block:hover {
+  background: #f6faf9;
+}
+
+.image {
+  margin-left: 0.5rem;
+  width: 100%;
+}
+.img {
+  width: 100%;
+  border-radius: 5px;
+}
+.input_block {
+  /* margin-left: 20px; */
+  display: flex;
+  flex: 1;
+  padding: 10px;
+}
+
+.input {
+  margin-top: 6px;
+}
+
+.input_section {
+  position: relative;
+  /* margin-right: 10px; */
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.left_side {
+  max-width: 500px;
+  margin: 10px;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.no_match_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.p {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 20px;
+}
+
+.paper {
+  padding: "10px";
+  border: "2px solid black";
+  margin: "10px";
+}
+
+.right_side {
+  border: 1px solid rgb(64, 0, 96);
+  padding: 30px;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
+}
+
+.title_a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title_a:hover,
+.title_a:focus,
+.title_a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.video {
+  width: "550px";
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
