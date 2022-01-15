@@ -24,6 +24,11 @@ import { Container, Heading } from "@chakra-ui/layout";
 
 import { Moralis } from "moralis";
 import { useEffect, useReducer, useContext } from "react";
+import {
+  ChakraNextLinkButton,
+  ChakraNextLink
+} from "components/UI/ChakraLinks";
+import { SocketContext } from "../../Store";
 
 async function getCloud() {
   // Fetch data from external API
@@ -107,7 +112,7 @@ const Call = (props: any) => {
           <meta name="description" content="VIDEO-CALLS" />
           <link rel="icon" href="/squared.png" />
         </Head>
-        <Header /> */}
+        // <Header /> */}
         <Container align="center">
           <Heading mb={6}>{user?.attributes.username}`s Meeting Room</Heading>
           <VideoPlayer />

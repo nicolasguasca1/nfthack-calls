@@ -1,7 +1,13 @@
 import Link, { LinkProps } from "next/link";
-import { Button, ButtonProps, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Button,
+  ButtonProps,
+  Link as ChakraLink,
+  LinkProps as ChakraLinkProps
+} from "@chakra-ui/react";
 
 type ChakraAndNextProps = ButtonProps & LinkProps;
+type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps;
 
 function ChakraNextLinkButton({
   href,
@@ -18,7 +24,7 @@ function ChakraNextLinkButton({
   );
 }
 
-function ChakraNextLink({ href, children, ...props }: ChakraAndNextProps) {
+function ChakraNextLink({ href, children, ...props }: ChakraLinkAndNextProps) {
   return (
     <Link href={href} passHref>
       <ChakraLink {...props}>{children}</ChakraLink>

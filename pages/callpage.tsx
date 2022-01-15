@@ -39,7 +39,7 @@ const socket = io("http://localhost:5000");
 
 // let peer = null;
 // const socket = io.connect(process.env.REACT_APP_BASE_URL);
-const initialState = [];
+const initialState: [] = [];
 
 const CallPage = () => {
   // getCloud();

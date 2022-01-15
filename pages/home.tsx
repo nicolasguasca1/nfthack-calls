@@ -17,6 +17,11 @@ import profilePic from "/Users/nicolasguascasantamaria/Documents/GitHub/eth-onli
 import { ExternalLinkIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 import Spinner from "@chakra-ui/react";
 
+import {
+  ChakraNextLinkButton,
+  ChakraNextLink
+} from "components/UI/ChakraLinks";
+
 const Home = (props: any) => {
   // const history = useHistory();
   const {
@@ -66,23 +71,18 @@ const Home = (props: any) => {
               creations.
             </p>
             <div className={styles.action_btn}>
-              <Link
-                passHref
-                // href="/call/[username]"
-                // as={`/call/${user?.attributes.username}`}
+              <ChakraNextLinkButton
+                className={styles.btn}
                 href="/callpage"
+                loadingText="Loading"
+                colorScheme="teal"
+                variant="outline"
+                spinnerPlacement="start"
+                onClick={setAdmin(true)}
               >
-                <Button
-                  loadingText="Loading"
-                  colorScheme="teal"
-                  variant="outline"
-                  spinnerPlacement="start"
-                  className={styles.btn}
-                  onClick={setAdmin(true)}
-                >
-                  New Meeting
-                </Button>
-              </Link>
+                New Meeting
+              </ChakraNextLinkButton>
+
               <span className={styles.p}>or</span>
               <div className={styles.input_block}>
                 <div className={styles.input_section}>
@@ -97,29 +97,6 @@ const Home = (props: any) => {
                     />
                   </InputGroup>
                 </div>
-                {/* {callAccepted && !callEnded ? (
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    startIcon={<PhoneDisabled fontSize="large" />}
-                    fullWidth
-                    onClick={leaveCall}
-                    // className={classes.margin}
-                  >
-                    Hang Up
-                  </Button>
-                ) : (
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<Phone fontSize="large" />}
-                    fullWidth
-                    onClick={() => callUser(idToCall)}
-                    // className={classes.margin}
-                  >
-                    Call
-                  </Button>
-                )} */}
                 {callAccepted && !callEnded ? (
                   <Button
                     variant="contained"
@@ -132,21 +109,16 @@ const Home = (props: any) => {
                     Hang Up
                   </Button>
                 ) : (
-                  <Link
-                    passHref
-                    // href="/call/[username]"
-                    // as={`/call/${user?.attributes.username}`}
+                  <ChakraNextLink
                     href="/callpage"
+                    className={styles.btn}
+                    onClick={() => {
+                      callUser(idToCall), setGuest(true);
+                    }}
                   >
-                    <button
-                      className={styles.btn}
-                      onClick={() => {
-                        callUser(idToCall), setGuest(true);
-                      }}
-                    >
-                      Join
-                    </button>
-                  </Link>
+                    Join
+                  </ChakraNextLink>
+
                   // <button
                   //   className={styles.btn}
                   //   onClick={() => callUser(idToCall)}
