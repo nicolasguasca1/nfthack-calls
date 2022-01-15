@@ -9,6 +9,8 @@ import { Input, InputGroup, InputLeftElement, Button } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 
 import { SocketContext } from "../Store";
+import io from "socket.io-client";
+const socket = io("http://localhost:5000");
 
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -25,11 +27,15 @@ import {
 const Home = (props: any) => {
   // const history = useHistory();
   const {
+    setMe,
     me,
     setAdmin,
     callAccepted,
+    setStream,
+    myVideo,
     name,
     setName,
+    setCall,
     callEnded,
     leaveCall,
     callUser,
@@ -40,13 +46,14 @@ const Home = (props: any) => {
     logout,
     user
   } = useContext<any>(SocketContext);
+  const router = useRouter();
+
   const [idToCall, setIdToCall] = useState("");
 
   // const startCall = () => {
   //   const uid = shortid.generate();
   //   history.push(`/${uid}#init`);
   // };
-  const router = useRouter();
   // const { id } = router.query;
   useEffect(() => {
     if (isUnauthenticated) {
@@ -58,6 +65,27 @@ const Home = (props: any) => {
     router.reload();
     setAdmin(false);
   }
+
+  useEffect(() => {
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: true })
+      .then((currentStream) => {
+        setStream(currentStream);
+        if (myVideo.current) {
+          myVideo.current.srcObject = currentStream;
+        }
+      });
+
+    socket.on("me", (id) => {
+      setMe(id);
+      setName(user?.attributes.username);
+    });
+
+    // socket.on("callUser", ({ from, name: callerName, signal }) => {
+    //   setCall({ isReceivingCall: true, from, name: callerName, signal });
+    // });
+  }, []);
+
   return (
     <Page>
       <div className={styles.body}>
@@ -73,7 +101,7 @@ const Home = (props: any) => {
             <div className={styles.action_btn}>
               <ChakraNextLinkButton
                 className={styles.btn}
-                href="/callpage"
+                href={`/call/${me}`}
                 loadingText="Loading"
                 colorScheme="teal"
                 variant="outline"
