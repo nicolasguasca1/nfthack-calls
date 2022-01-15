@@ -81,9 +81,9 @@ const Home = (props: any) => {
       setName(user?.attributes.username);
     });
 
-    // socket.on("callUser", ({ from, name: callerName, signal }) => {
-    //   setCall({ isReceivingCall: true, from, name: callerName, signal });
-    // });
+    socket.on("callUser", ({ from, name: callerName, signal }) => {
+      setCall({ isReceivingCall: true, from, name: callerName, signal });
+    });
   }, []);
 
   return (
@@ -138,7 +138,7 @@ const Home = (props: any) => {
                   </Button>
                 ) : (
                   <ChakraNextLink
-                    href="/callpage"
+                    href={`/call/${idToCall}`}
                     className={styles.btn}
                     onClick={() => {
                       callUser(idToCall), setGuest(true);
