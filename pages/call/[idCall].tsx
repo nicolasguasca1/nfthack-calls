@@ -45,7 +45,6 @@ const initialState: [] = [];
 
 const CallPage = () => {
   const router = useRouter();
-  const { idCall } = router.query;
 
   // getCloud();
   const {

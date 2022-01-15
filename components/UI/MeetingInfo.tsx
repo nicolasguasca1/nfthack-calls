@@ -70,9 +70,10 @@ const MeetingInfo = ({ setMeetInfoPopup }) => {
     user
   } = useContext<any>(SocketContext);
   const router = useRouter();
+  const { idCall } = router.query;
 
   const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT}${router.asPath}`;
-  const url = `${endpoint}/${me}`;
+  const url = `${endpoint}/${idCall}`;
 
   return (
     <div className={styles.meeting_info_block}>
