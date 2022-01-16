@@ -16,7 +16,7 @@ const Login = () => {
   }, [isAuthenticated]);
 
   return (
-    <Page>
+    <>
       <main className={styles.main}>
         <h1 className={styles.title}>Video Calls!</h1>
         <Container align="center">
@@ -32,7 +32,7 @@ const Login = () => {
           </span>
         </a>
       </footer>
-    </Page>
+    </>
   );
 };
 

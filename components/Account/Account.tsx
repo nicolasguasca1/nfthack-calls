@@ -57,12 +57,12 @@ function Account() {
       <>
         <LomModal
           placeholder="Authenticate"
-          bodyStyle={{
-            padding: "15px",
-            fontSize: "17px",
-            fontWeight: "500"
-          }}
-          style={{ fontSize: "16px", fontWeight: "500" }}
+          //   bodyStyle={{
+          //     padding: "15px",
+          //     fontSize: "17px",
+          //     fontWeight: "500"
+          //   }}
+          //   style={{ fontSize: "16px", fontWeight: "500" }}
         >
           <div
             style={{

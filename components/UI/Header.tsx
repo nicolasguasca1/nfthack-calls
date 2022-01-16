@@ -6,11 +6,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../styles/Header.module.css";
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@chakra-ui/react";
+
 import { SocketContext } from "../../Store";
 import React, { useState, useContext, ReactChildren, ReactChild } from "react";
 import { ChakraNextLinkButton, ChakraNextLink } from "./ChakraLinks";
+import Chains from "components/Chains";
 
 const Header = () => {
   const { isAuthenticated, logout, user } = useContext<any>(SocketContext);
@@ -41,6 +41,7 @@ const Header = () => {
               Logout {user !== null && user.attributes.username}
             </ChakraNextLinkButton>
           </div>
+          <Chains />
 
           <ChakraNextLinkButton
             className={styles.action_btn}

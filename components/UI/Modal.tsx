@@ -26,7 +26,7 @@ export const LomModal = ({
 }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Page>
+    <>
       <Button onClick={onOpen}>{placeholder}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
@@ -44,7 +44,7 @@ export const LomModal = ({
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </Page>
+    </>
   );
 
   //   return (
