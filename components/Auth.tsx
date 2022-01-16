@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState, useContext } from "react";
 import { SocketContext } from "../Store";
+import Account from "components/Account/Account";
 
 import { useRouter } from "next/router";
 
@@ -97,9 +98,7 @@ export const Auth = () => {
           {/* <CloseButton position="absolute" right="8px" top="8px" /> */}
         </Alert>
       )}
-      <Button isLoading={isAuthenticating} onClick={() => authenticate()}>
-        Connect with Metamask
-      </Button>{" "}
+      <Account />
       <Text>
         <em>or</em>
       </Text>

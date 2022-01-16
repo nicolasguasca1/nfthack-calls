@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 
 import { MoralisProvider } from "react-moralis";
 import { ContextProvider } from "../Store";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, Button } from "@chakra-ui/react";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { LomModal } from "../components/UI/Modal";
 
@@ -27,11 +27,9 @@ const SERVER_URL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL as string;
 function MyApp({ Component, pageProps }: AppProps) {
   if (!APP_ID || !SERVER_URL) {
     return (
-      // <ThemeProvider theme={theme}>
-      //   <Reset />
-      //   <GlobalStyle />
+      // <div>Hello</div>
       <ChakraProvider theme={theme}>
-        <LomModal>
+        <LomModal placeholder="Up's, something's wrong...">
           <h3>Moralis App_ID and Server_ID has not been set:</h3>
           <p>
             Follow the steps on the{" "}
@@ -51,8 +49,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           </pre>
         </LomModal>
       </ChakraProvider>
-
-      // </ThemeProvider>
     );
   }
 

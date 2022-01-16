@@ -14,18 +14,25 @@ import Page from "./Page";
 interface Props {
   children: React.ReactNode;
   onHandleClose?: () => void;
+  placeholder?: string;
+  title?: string;
 }
 
-export const LomModal = ({ children, onHandleClose }: Props) => {
+export const LomModal = ({
+  children,
+  onHandleClose,
+  placeholder,
+  title
+}: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Page>
-      <Button onClick={onOpen}>Ups, something`s wrong!</Button>
+      <Button onClick={onOpen}>{placeholder}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>{children}</ModalBody>
 

@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@chakra-ui/button": "^1.4.2",
-    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.6.7",
     "@chakra-ui/system": "^1.7.3",
     "@emotion/react": "^11",
@@ -46,6 +46,7 @@
     "next": "11.1.2",
     "parse": "^3.3.0",
     "react": "17.0.2",
+    "react-blockies": "^1.4.1",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "17.0.2",
     "react-moralis": "^0.2.3",
@@ -63,6 +64,7 @@
   "devDependencies": {
     "@types/node": "^16.9.1",
     "@types/react": "17.0.20",
+    "@types/react-blockies": "^1.4.1",
     "@types/react-copy-to-clipboard": "^5.0.1",
     "@types/simple-peer": "^9.11.3",
     "eslint": "7.32.0",
