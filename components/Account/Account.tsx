@@ -130,7 +130,7 @@ function Account() {
         </p>
         <Blockie currentWallet scale={3} />
       </div>
-      <Modal
+      <LomModal
         visible={isModalVisible}
         footer={null}
         onCancel={() => setIsModalVisible(false)}
@@ -185,7 +185,7 @@ function Account() {
         >
           Disconnect Wallet
         </Button>
-      </Modal>
+      </LomModal>
     </>
   );
 }

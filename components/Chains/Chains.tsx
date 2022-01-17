@@ -15,6 +15,10 @@ import { ArrowDownIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { AvaxLogo, PolygonLogo, BSCLogo, ETHLogo } from "./Logos";
 import { useChain, useMoralis } from "react-moralis";
 import Image from "next/image";
+import {
+  ChakraNextLinkButton,
+  ChakraNextLink
+} from "components/UI/ChakraLinks";
 
 const styles = {
   item: {
@@ -114,11 +118,33 @@ function Chains() {
     switchNetwork(e.key);
   };
 
-  const menu = (
-    <Menu>
-      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+  const OverlayMenu = (
+    <Menu onClick={handleMenuClick}>
+      <MenuButton
+        key={selected?.key}
+        px={14}
+        py={1}
+        transition="all 0.2s"
+        margin={10}
+        borderRadius="xl"
+        borderWidth="1px"
+        _hover={{ bg: "gray.400" }}
+        _expanded={{ bg: "purple.800" }}
+        _focus={{ boxShadow: "outline" }}
+        rightIcon={<ArrowDownIcon />}
+      >
         Your Cats
       </MenuButton>
+
+      <MenuList>
+        {menuItems.map((item) => (
+          <MenuItem key={item.key} icon={item.icon} style={styles.item}>
+            <span style={{ marginLeft: "5px" }}>{item.value}</span>
+          </MenuItem>
+        ))}
+      </MenuList>
+
+      {/* <MenuButton rightIcon={<ChevronDownIcon />}>Your Cats</MenuButton>
       <MenuList>
         <MenuItem minH="48px">
           <Image
@@ -140,7 +166,7 @@ function Chains() {
           />
           <span>Simon the pensive</span>
         </MenuItem>
-      </MenuList>
+      </MenuList> */}
     </Menu>
 
     // <Menu onClick={handleMenuClick}>
@@ -167,25 +193,33 @@ function Chains() {
     //     </Button>
     //   </Dropdown>
     <div>
+      {/* <Menu>{OverlayMenu}</Menu> */}
+
       <Menu>
         <MenuButton
-          px={4}
-          py={2}
+          key={selected?.key}
+          icon={selected?.icon}
+          px={14}
+          py={1}
           transition="all 0.2s"
-          borderRadius="md"
+          margin={10}
+          borderRadius="xl"
           borderWidth="1px"
           _hover={{ bg: "gray.400" }}
-          _expanded={{ bg: "blue.400" }}
+          _expanded={{ bg: "purple.800" }}
           _focus={{ boxShadow: "outline" }}
+          rightIcon={<ChevronDownIcon />}
         >
-          File <ChevronDownIcon />
+          <span style={{ marginLeft: "5px" }}>{selected?.value}</span>
+          <ArrowDownIcon />
         </MenuButton>
-        <MenuList>
-          <MenuItem>New File</MenuItem>
-          <MenuItem>New Window</MenuItem>
-          <MenuDivider />
-          <MenuItem>Open...</MenuItem>
-          <MenuItem>Save File</MenuItem>
+
+        <MenuList onClick={handleMenuClick}>
+          {menuItems.map((item) => (
+            <MenuItem key={item.key} icon={item.icon} style={styles.item}>
+              <span style={{ marginLeft: "5px" }}>{item.value}</span>
+            </MenuItem>
+          ))}
         </MenuList>
       </Menu>
     </div>
