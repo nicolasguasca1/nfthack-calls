@@ -8,7 +8,7 @@ import { Request, Response } from "express";
 const cors = initMiddleware(
   Cors({
     origin: "*",
-    methods: ["GET", "POST", "OPTIONS"],
+    methods: ["GET", "POST", "OPTIONS"]
   })
 );
 

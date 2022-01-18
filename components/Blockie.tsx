@@ -8,7 +8,7 @@ import { useMoralis } from "react-moralis";
  * @returns <Blockies> JSX Elemenet
  */
 
-function Blockie(props) {
+function Blockie(props): JSX.Element {
   const { account, isAuthenticated } = useMoralis();
   if (!props.address && (!account || !isAuthenticated))
     return <SkeletonCircle size="40" />;
@@ -17,7 +17,7 @@ function Blockie(props) {
     <Blockies
       seed={
         props.currentWallet
-          ? account.toLowerCase()
+          ? account?.toLowerCase()
           : props.address.toLowerCase()
       }
       className="identicon"
