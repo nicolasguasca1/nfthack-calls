@@ -22,7 +22,7 @@
     "resolveJsonModule": true,
     "importHelpers": true
   },
-  "exclude": ["dist", ".next", "out", "next.config.js"],
+  "exclude": ["dist", ".next", "out", "next.config.js, ./server/index.ts"],
   "include": [
     "next-env.d.ts",
     "additional.d.ts",
